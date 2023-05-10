@@ -1,0 +1,20 @@
+.card {
+}
+
+.titles {
+    display:flex;
+    justify-content: space-between;
+}
+
+.values {
+    display:flex;
+    justify-content: space-between;
+}
+
+.item {
+    
+}
+
+img {
+    width:6em;
+}

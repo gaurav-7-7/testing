@@ -1,0 +1,31 @@
+<!-- <p>cart-page works!</p> -->
+<app-header></app-header>
+
+<h3 class="heading">Your Cart ( {{cartLength}} ) </h3>
+
+<div class="card">
+  <mat-card>
+    <mat-card-content class="titles">
+      <span>Item</span>
+      <span>Price</span>
+      <span>Quantity</span>
+      <span>Total</span>
+    </mat-card-content>
+  </mat-card>
+  <div class="cartItems" *ngFor="let item of cartItem">
+    <!-- {{item.item | json}} -->
+    <mat-card>
+      <mat-card-content class="values">
+        <span class="item">
+          <span>
+            <img src={{item.item.thumbnail}} alt={{item.item.title}} #img>
+          </span>
+          {{item.item.title}}
+        </span>
+        <span class="price">{{item.item.price | currency}}</span>
+        <span class="quantity">{{item.quantity}}</span>
+        <span class="total">{{item.item.price * item.quantity | currency}}</span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+:root {
+    --grey: #6b6969;
+    --white: #ffffff;
+  }
+
+
+header{
+    padding:0;
+    box-shadow: 0px 15px 10px -15px grey; 
+    background-color:whitesmoke;
+}
+
+
+a{
+    color:#6b6969;
+    text-decoration:none;
+}
+
+.hub {
+    background: #6b6969;
+    padding: 3px;
+    color: white;
+    border-radius: 7px;
+}
+
+a:hover{
+    /* background-color: grey; */
+    color:black;
+}
+
+a:hover > .hub {
+    background: black;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userImg {
+    width: 2em;
+    padding: 0em;
+}
+
+a.logo{
+    font-weight: bold;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin:0px;
+}
+
+nav ul li a{
+    font-weight: bold;
+    padding: 1em;
+    display: inline-block;
+
+}

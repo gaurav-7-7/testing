@@ -1,0 +1,46 @@
+<app-header></app-header>
+<mat-spinner class="spinner" *ngIf="spin" mode="indeterminate" [diameter]="50"></mat-spinner>
+<app-search></app-search>
+<app-tags *ngIf="!spin" [category]="category"></app-tags>
+<div *ngIf="!spin">
+<ul>
+    <li *ngFor="let item of product | paginate
+    : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };
+let i = index">
+        <a href="/home/{{item.id}}">
+            <img src="{{item.thumbnail}}" alt="food images">
+            <div class="content">
+                <div class="name">
+                    {{item.title}}
+                </div>
+                <span class="favorite {{item.favorite?'':'not'}}">❤︎</span>
+                <div class="star">
+                    <star-rating [value]="item.rating" [totalstars]="5" checkedcolor="brown" uncheckedcolor="black"
+                        size="14px" [readonly]="true"></star-rating>
+                </div>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span>
+                            {{item.description}}
+                        </span>
+                    </div>
+                </div>
+                <div class="price">
+                    {{item.price | currency}}
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+<div class="pagination">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+</div>
+
+</div>
+
+<!-- <app-footer></app-footer> -->

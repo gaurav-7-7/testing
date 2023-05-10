@@ -1,0 +1,50 @@
+<!-- >>>>>>>>>{{food | json}} -->
+<app-header></app-header>
+<mat-spinner class="spinner" *ngIf="spin" mode="indeterminate" [diameter]="50"></mat-spinner>
+<div *ngIf="!spin" class="container">
+    <span>
+        <img src="{{food.thumbnail}}" alt="{{food.title}}" #img>
+    </span>
+    <!-- <div class="images">
+        <span>
+            <mat-icon (click)="getimage('left',0)">arrow_circle_left</mat-icon>
+        </span>
+        
+        <span>
+            <mat-icon (click)="getimage('right',0)">arrow_circle_right</mat-icon>
+        </span>
+    </div> -->
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{food.title}}
+            </span>
+            <span class="favorite {{food.favorite?'':'not'}}">
+                ❤︎
+            </span>
+        </div>
+        <div>{{food.brand}} | {{food.category}}</div>
+        <div class="star">
+            <star-rating [value]="food.rating" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="16px"
+                [readonly]="true">
+            </star-rating>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of food.origins">
+                {{origin}}
+            </span>
+        </div>
+        <!-- <div class="tag">
+        <app-tags [foodPagetags]="food.tags" justifyContent = "start"></app-tags>
+    </div> -->
+        <div class="cook-time">
+            <span>
+                The product is available at <strong>{{food.discountPercentage}}%</strong>&nbsp;discount!!
+            </span>
+        </div>
+        <div class="price">
+            <span>{{food.price | currency}}</span>
+        </div>
+        <button (click)="addItem(food)">Add To Cart</button>
+    </div>
+</div>

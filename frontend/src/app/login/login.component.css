@@ -1,0 +1,40 @@
+
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.card-body {
+    width: 23rem;
+    height: 28rem;
+    box-shadow: 0 0.1em 0.5em 0 grey;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin:0.5rem;
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+    color: rgba(0, 0, 0, 0.706);
+    font-weight: 550;
+}
+
+.heading {
+    height: 1.3em;
+    font-size: 2em;
+}
+
+.sub-heading {
+    font-weight: 400;
+    font-size: 0.8em;
+    height: 3em;
+}
+
+.field {
+    width:20rem;
+}

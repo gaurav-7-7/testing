@@ -1,0 +1,34 @@
+    <div class="card">
+        <div class="card-body">
+            <div class="heading">Login</div>
+            <div class="sub-heading">Doesn't have an account? <a href="/register">Register</a></div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <!-- <div class="form-group">
+                    <label for="email">email</label><br>
+                    <input type="text" formControlName="email" class="form-control" />
+                </div> -->
+                <div class="form-group">
+                    <mat-form-field class="field">
+                        <mat-label for="email">Email</mat-label>
+                        <input matInput type="text" formControlName="email" class="form-control" />
+                    </mat-form-field>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="password">Password</label><br>
+                    <input type="password" formControlName="password" class="form-control" />
+                </div> -->
+                <div class="form-group">
+                    <mat-form-field class="field">
+                        <mat-label for="password">Password</mat-label>
+                        <input matInput type="password" formControlName="password" class="form-control" />
+                    </mat-form-field>
+                </div>
+                <!-- <button class="btn btn-primary" [disabled]= "!loginForm.valid">
+                    Login
+                </button> -->
+                <div class="form-group">
+                    <button mat-flat-button [disabled]= "!loginForm.valid">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
